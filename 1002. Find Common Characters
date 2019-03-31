@@ -8,14 +8,11 @@ class Solution {
         for(int i = 0; i<char1.length;i++) {
         	firstStr[i] = Character.toString(char1[i]);
         }
-        
-        
-        StringBuffer[] sbArr = new StringBuffer[A.length];
-        
+	
+        StringBuffer[] sbArr = new StringBuffer[A.length]
         for(int i=0; i<A.length; i++) {
         	StringBuffer sb = new StringBuffer();
-        	sbArr[i]=sb.append(A[i]);
-        	
+        	sbArr[i]=sb.append(A[i]);	
         }
         
         for(String s : firstStr) {
@@ -27,12 +24,10 @@ class Solution {
         			sbArr[i].deleteCharAt(index);
         		}
         	}
-        	if(existInAll) {
+        	if(existInAll) 
         		list.add(s);
-        	}
-        	
+			
         }
-        
         return list;
     }
 }
