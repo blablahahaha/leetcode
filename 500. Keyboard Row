@@ -1,0 +1,39 @@
+// https://leetcode.com/problems/keyboard-row/
+class Solution {
+    public String[] findWords(String[] words) {
+        String row1 = "qwertyuiop";
+        String row2 = "asdfghjkl";
+        String row3 = "zxcvbnm";
+        //StringBuffer[] sbArr = new StringBuffer();
+        List<String> l1 = new ArrayList<String>();
+        for(String s : words) {
+        	char[] charArray = s.toCharArray();
+        	char firstChar = Character.toLowerCase(charArray[0]);
+        	CharSequence cs1 = Character.toString(firstChar);
+        	if(row1.contains(cs1) && sameRow(charArray, row1)) {
+        		l1.add(s);
+        	}
+        	else if(row2.contains(cs1) && sameRow(charArray, row2)) {
+        		l1.add(s);
+        	}
+        	else if(row3.contains(cs1) && sameRow(charArray, row3)) {
+        		l1.add(s);
+        	}
+        }
+        String[] result = l1.toArray(new String[0]);
+        return result;
+        
+    }
+	public boolean sameRow(char[] ca, String row) {
+		boolean inSameRow = true;
+		for(char c : ca) {
+			char lowerChar = Character.toLowerCase(c);
+			CharSequence cs = Character.toString(lowerChar);
+			if(!row.contains(cs)) {
+				inSameRow = false;
+				break;
+			}
+		}
+		return inSameRow;
+	}
+}
