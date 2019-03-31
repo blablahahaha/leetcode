@@ -1,0 +1,18 @@
+// https://leetcode.com/problems/robot-return-to-origin/
+class Solution {
+    public boolean judgeCircle(String moves) {
+      char[] charArr = moves.toCharArray();
+        if(charArr.length%2 != 0)return false;
+        int cU = 0, cD= 0, cL= 0, cR=0;
+        for(char c : charArr) {
+        	switch(c) {
+        	case 'U':cU ++; break;
+        	case 'D':cD ++; break;
+        	case 'L':cL ++; break;
+        	case 'R':cR ++; break;
+        	}
+        }
+        if(cU == cD && cL == cR)return true;
+        else return false;  
+    }
+}
