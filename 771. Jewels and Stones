@@ -1,0 +1,12 @@
+// https://leetcode.com/submissions/detail/210763181/
+class Solution {
+    public int numJewelsInStones(String J, String S) {
+        int count = 0;
+        char[] charArr = S.toCharArray();
+        for(char c : charArr){
+            String str1 = ""+c;
+            if(J.contains(str1)) count++;
+        }
+        return count;
+    }
+}
