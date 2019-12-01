@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-common-characters/
+
 class Solution {
     public List<String> commonChars(String[] A) {
 		    List<String> list = new ArrayList<>();
